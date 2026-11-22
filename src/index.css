@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-bangla: 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+    --font-latin: 'Plus Jakarta Sans', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    font-family: var(--font-bangla);
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html[lang="en"] {
+    font-family: var(--font-latin);
+  }
+
+  body {
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
